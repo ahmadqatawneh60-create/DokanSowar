@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dokan Sowar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0a;
+  color: white;
+}
+
+header {
+  display:flex;
+  justify-content:space-between;
+  padding:20px 50px;
+  position:fixed;
+  width:100%;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+}
+
+header h1 {letter-spacing:2px;}
+nav a {
+  margin-left:20px;
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.hero {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:url('https://images.unsplash.com/photo-1519741497674-611481863552') center/cover;
+}
+
+.hero h2 {
+  font-size:60px;
+  max-width:700px;
+}
+
+.hero p {
+  margin-top:20px;
+  color:#ccc;
+}
+
+.btn {
+  margin-top:30px;
+  padding:12px 30px;
+  background:white;
+  color:black;
+  border-radius:30px;
+  text-decoration:none;
+}
+
+section {padding:100px 50px;}
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.gallery img {
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:15px;
+  transition:0.3s;
+}
+
+.gallery img:hover {
+  transform:scale(1.05);
+}
+
+.contact {
+  text-align:center;
+}
+
+footer {
+  text-align:center;
+  padding:20px;
+  border-top:1px solid #222;
+  color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Dokan Sowar</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Capture Moments. Create Memories.</h2>
+  <p>Professional Photography Studio in Amman</p>
+  <a href="#contact" class="btn">Book Now</a>
+</section>
+
+<section id="work">
+  <h2 style="text-align:center;margin-bottom:40px;">Our Work</h2>
+  <div class="gallery">
+    <img src="https://source.unsplash.com/600x600/?portrait">
+    <img src="https://source.unsplash.com/600x600/?wedding">
+    <img src="https://source.unsplash.com/600x600/?fashion">
+    <img src="https://source.unsplash.com/600x600/?studio">
+    <img src="https://source.unsplash.com/600x600/?photography">
+    <img src="https://source.unsplash.com/600x600/?model">
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Phone: 07XXXXXXXX</p>
+  <p>Amman, Jordan</p>
+  <a href="https://www.instagram.com/dokansowar/" class="btn">Instagram</a>
+</section>
+
+<footer>
+  © 2026 Dokan Sowar Studio
+</footer>
+
+</body>
+</html>
