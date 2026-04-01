@@ -2,275 +2,696 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dokan Sowar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Dokan Sowar | Modern Photography Studio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts + Font Awesome Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background:#0a0a0a;
-  color:white;
-}
-
-/* HEADER */
-header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 60px;
-  position:fixed;
-  width:100%;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter: blur(15px);
-  z-index:1000;
-}
-
-header h1 {
-  letter-spacing:3px;
-  font-weight:700;
-}
-
-nav a {
-  margin-left:25px;
-  color:white;
-  text-decoration:none;
-  font-size:14px;
-  position:relative;
-}
-
-nav a::after {
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-5px;
-  width:0;
-  height:2px;
-  background:#fff;
-  transition:0.3s;
-}
-
-nav a:hover::after {
-  width:100%;
-}
-
-/* HERO */
-.hero {
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1519741497674-611481863552') center/cover;
-}
-
-.hero h2 {
-  font-size:64px;
-  max-width:800px;
-  line-height:1.2;
-}
-
-.hero p {
-  margin-top:20px;
-  color:#bbb;
-  font-size:18px;
-}
-
-.btn {
-  margin-top:30px;
-  padding:14px 35px;
-  background:white;
-  color:black;
-  border-radius:40px;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
-}
-
-.btn:hover {
-  background:#ddd;
-  transform:translateY(-3px);
-}
-
-section {
-  padding:120px 60px;
-}
-
-/* SECTION TITLE */
-.section-title {
-  text-align:center;
-  margin-bottom:60px;
-  font-size:32px;
-}
-
-/* GALLERY */
-.gallery {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-}
-
-.card {
-  position:relative;
-  overflow:hidden;
-  border-radius:20px;
-}
-
-.card img {
-  width:100%;
-  height:350px;
-  object-fit:cover;
-  transition:0.5s;
-}
-
-.card:hover img {
-  transform:scale(1.1);
-}
-
-.card::after {
-  content:"View";
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  background:rgba(0,0,0,0.6);
-  padding:10px 20px;
-  border-radius:20px;
-  opacity:0;
-  transition:0.3s;
-}
-
-.card:hover::after {
-  opacity:1;
-}
-
-/* CONTACT */
-.contact {
-  text-align:center;
-}
-
-.contact p {
-  margin:10px 0;
-  color:#ccc;
-}
-
-.contact a {
-  color:white;
-  text-decoration:none;
-}
-
-/* MAP */
-.map {
-  margin-top:40px;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,0.6);
-}
-
-/* FOOTER */
-footer {
-  text-align:center;
-  padding:25px;
-  border-top:1px solid #222;
-  color:#777;
-}
-
-/* ARABIC TEXT */
-.arabic {
-  margin-top:25px;
-  color:#aaa;
-  font-size:17px;
-  line-height:1.9;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  header {
-    padding:15px 20px;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-  .hero h2 {
-    font-size:36px;
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #050505;
+    color: #f0f0f0;
+    line-height: 1.5;
+    overflow-x: hidden;
   }
 
+  /* custom smooth scroll & selection */
+  ::selection {
+    background: #c49a6c;
+    color: #0a0a0a;
+  }
+
+  /* modern glassmorphic header */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(5, 5, 5, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .logo {
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #c0a07a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #c49a6c;
+    transition: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  }
+
+  .nav-links a:hover::before {
+    width: 100%;
+  }
+
+  .nav-links a:hover {
+    color: #ffffff;
+  }
+
+  /* mobile menu btn */
+  .menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* hero section modern fullscreen */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(125deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1554048612-b6a482bc67e5?q=80&w=2070&auto=format') center/cover no-repeat;
+    background-attachment: fixed;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    padding: 2rem;
+    animation: fadeUp 1s ease-out;
+  }
+
+  .hero-content h2 {
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to right, #fff, #d4b48c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.8rem;
+    color: #cfcfcf;
+    font-weight: 400;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .btn-primary, .btn-outline {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    border-radius: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-primary {
+    background: #ffffff;
+    color: #0a0a0a;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+
+  .btn-primary:hover {
+    background: #e6e6e6;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  }
+
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.6);
+    color: white;
+    background: transparent;
+    backdrop-filter: blur(4px);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+    transform: translateY(-2px);
+  }
+
+  /* global section style */
   section {
-    padding:80px 20px;
+    padding: 6rem 2rem;
   }
-}
+
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    margin-bottom: 3rem;
+    letter-spacing: -0.3px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .section-title:after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: #c49a6c;
+    margin: 0.8rem auto 0;
+    border-radius: 4px;
+  }
+
+  /* modern gallery grid with light effect */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4 / 5;
+    box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+    transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-8px);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .overlay-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 1.5rem 1rem 1rem;
+    transform: translateY(100%);
+    transition: 0.3s ease;
+    text-align: center;
+  }
+
+  .gallery-item:hover .overlay-info {
+    transform: translateY(0);
+  }
+
+  .overlay-info span {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    color: #f5e2c4;
+  }
+
+  /* stats modern */
+  .stats-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: center;
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 48px;
+    padding: 2.5rem 2rem;
+    margin-top: 2rem;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .stat-item h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #c49a6c;
+  }
+
+  /* contact area modern */
+  .contact-modern {
+    background: #0c0c0c;
+    border-radius: 40px;
+    padding: 3rem 2rem;
+    box-shadow: 0 25px 45px -12px black;
+  }
+
+  .contact-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .contact-info {
+    flex: 1;
+    min-width: 240px;
+  }
+
+  .contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.2rem 0;
+    font-size: 1rem;
+  }
+
+  .contact-detail i {
+    width: 40px;
+    height: 40px;
+    background: #1e1e1e;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    color: #c49a6c;
+    font-size: 1.3rem;
+  }
+
+  .contact-detail a {
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .contact-detail a:hover {
+    color: #c49a6c;
+  }
+
+  .map-wrapper {
+    flex: 1.2;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.4);
+    min-height: 280px;
+  }
+
+  .map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    border: 0;
+  }
+
+  .arabic-call {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    font-weight: 500;
+    color: #b9a27b;
+    border-top: 1px solid #2a2a2a;
+    padding-top: 2rem;
+  }
+
+  /* footer */
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #1a1a1a;
+    color: #6c6c6c;
+    font-size: 0.85rem;
+  }
+
+  /* animations */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(35px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* responsive design */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0.9rem 1.2rem;
+    }
+    .nav-links {
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      width: 70%;
+      height: calc(100vh - 70px);
+      background: rgba(8, 8, 8, 0.96);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem 2rem;
+      gap: 2rem;
+      transition: 0.3s ease-in-out;
+      border-right: 1px solid #2c2c2c;
+      z-index: 999;
+    }
+    .nav-links.active {
+      left: 0;
+    }
+    .nav-links a {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+    .menu-btn {
+      display: block;
+    }
+    section {
+      padding: 4rem 1.2rem;
+    }
+    .stats-row {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .contact-flex {
+      flex-direction: column;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+    .btn-group {
+      gap: 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid {
+      gap: 1rem;
+    }
+    .btn-primary, .btn-outline {
+      padding: 0.7rem 1.6rem;
+    }
+    .contact-modern {
+      padding: 1.8rem;
+    }
+  }
+
+  /* scroll reveal effect (simple intersection) */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Dokan Sowar</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#work">Work</a>
-    <a href="#contact">Contact</a>
+  <nav class="navbar">
+    <a href="#" class="logo">DOKAN SOWAR</a>
+    <button class="menu-btn" id="menuToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#gallery">Portfolio</a>
+      <a href="#contact">Contact</a>
+      <a href="#map-location">Studio</a>
+    </div>
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <h2>Capture Moments. Create Timeless Memories.</h2>
-  <p>Modern Photography Studio in Al-Karak Jordan</p>
-  <a href="#contact" class="btn">Book Now</a>
-</section>
+<main>
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Frame Your Story.<br>Timeless & Authentic.</h2>
+      <p>Contemporary photography studio based in Al-Karak — where every image becomes a legacy.</p>
+      <div class="btn-group">
+        <a href="#contact" class="btn-primary">Book a session</a>
+        <a href="#gallery" class="btn-outline">Explore work <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
 
-<!-- WORK -->
-<section id="work">
-  <h2 class="section-title">Our Work</h2>
+  <!-- GALLERY / WORK SECTION - high quality curated unsplash images (modern categories) -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">Latest Collections</h2>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- dynamic images: high-res, thematic -->
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format" alt="portrait"><div class="overlay-info"><span>✨ Elegant Portraits</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format" alt="wedding"><div class="overlay-info"><span>💍 Wedding Stories</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&auto=format" alt="fashion"><div class="overlay-info"><span>👗 Editorial Fashion</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&auto=format" alt="studio"><div class="overlay-info"><span>📸 Studio Vibes</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=800&auto=format" alt="candid"><div class="overlay-info"><span>🎞️ Candid Moments</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&auto=format" alt="couple"><div class="overlay-info"><span>💖 Couple Sessions</span></div></div>
+      </div>
 
-  <div class="gallery">
-    <div class="card"><img src="https://source.unsplash.com/600x600/?portrait"></div>
-    <div class="card"><img src="https://source.unsplash.com/600x600/?wedding"></div>
-    <div class="card"><img src="https://source.unsplash.com/600x600/?fashion"></div>
-    <div class="card"><img src="https://source.unsplash.com/600x600/?studio"></div>
-    <div class="card"><img src="https://source.unsplash.com/600x600/?photography"></div>
-    <div class="card"><img src="https://source.unsplash.com/600x600/?model"></div>
-  </div>
-</section>
+      <!-- stats row modern touch -->
+      <div class="stats-row fade-up">
+        <div class="stat-item"><h3>350+</h3><p>Happy Clients</p></div>
+        <div class="stat-item"><h3>7+</h3><p>Years Experience</p></div>
+        <div class="stat-item"><h3>24+</h3><p>Weddings / Year</p></div>
+        <div class="stat-item"><h3>5★</h3><p>Top Ratings</p></div>
+      </div>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
+  <!-- CONTACT MODERN SECTION -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Let’s Create Together</h2>
+      <div class="contact-modern">
+        <div class="contact-flex">
+          <div class="contact-info">
+            <h3>Reach out</h3>
+            <div class="contact-detail">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:dokansowar@gmail.com">dokansowar@gmail.com</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-phone-alt"></i>
+              <a href="tel:0799015930">+962 79 901 5930</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Al-Karak / Mu’tah, Jordan</span>
+            </div>
+            <div class="contact-detail">
+              <i class="fab fa-instagram"></i>
+              <a href="https://www.instagram.com/dokansowar/" target="_blank">@dokansowar</a>
+            </div>
+            <div style="margin-top: 1.5rem;">
+              <a href="https://www.instagram.com/dokansowar/" target="_blank" class="btn-primary" style="background:#c49a6c; color:#111;">Follow on Instagram <i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="map-wrapper" id="map-location">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13560.809705442453!2d35.687428!3d31.098887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15032a6c9bb38669%3A0x45b4a1c9e6a1e6b0!2sMu&#39;tah%2C%20Jordan!5e0!3m2!1sen!2sjo!4v1710000000000!5m2!1sen!2sjo" 
+              width="100%" 
+              height="280" 
+              style="border:0; border-radius: 28px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+        <div class="arabic-call">
+          <i class="fas fa-camera-retro"></i> من دكّاننا الى ذكرياتكم — لحظات لا تُنسى 📷✨
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-  <h2 class="section-title">Contact Us</h2>
-
-  <p>📧 <a href="mailto:dokansowar@gmail.com">dokansowar@gmail.com</a></p>
-  <p>📞 <a href="tel:0799015930">0799015930</a></p>
-  <p>📍 Al-Karak / Mu’tah, Jordan</p>
-
-  <div class="arabic">
-    من دكّاننا الى ذكرياتكم 📷🎞️<br>
-  </div>
-
-  <div class="map">
-    <iframe
-      src="https://www.google.com/maps?q=31.102123494560754,35.70665328892669&z=16&output=embed"
-      width="100%"
-      height="350"
-      style="border:0;"
-      loading="lazy">
-    </iframe>
-  </div>
-<br>
-  <a href="https://www.instagram.com/dokansowar/" class="btn">Instagram</a>
-
-</section>
-
-<footer>
-  © 2026 Dokan Sowar Studio
+<footer class="footer">
+  <p>© 2026 Dokan Sowar Photography Studio — Al-Karak, Jordan. All moments reserved.</p>
 </footer>
 
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  
+  function closeMenu() {
+    if(navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  }
+  
+  if(menuBtn) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
+      // change icon style
+      const icon = menuBtn.querySelector('i');
+      if(navLinks.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  }
+  
+  // Close mobile menu when clicking on a nav link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if(navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        const icon = menuBtn.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  });
+  
+  // Smooth scroll for all anchor links (including #)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId === "#" || targetId === "") return;
+      const targetElement = document.querySelector(targetId);
+      if(targetElement) {
+        e.preventDefault();
+        const offset = 80; // header offset
+        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // Intersection Observer for fade-up animation
+  const fadeElements = document.querySelectorAll('.fade-up');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const statsDiv = document.querySelector('.stats-row');
+  
+  // also add fade-up class to sections / elements
+  const allFade = document.querySelectorAll('.contact-modern, .gallery-grid, .stats-row');
+  allFade.forEach(el => {
+    if(!el.classList.contains('fade-up')) el.classList.add('fade-up');
+  });
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  
+  // lazy load images improvement: force nice preload? not needed, but give gallery modern touch
+  // add hover micro interactions for gallery items
+  const cards = document.querySelectorAll('.gallery-item');
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      // optional
+    });
+  });
+  
+  // Additional dynamic: change active state based on scroll (optional but modern)
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-links a');
+  
+  function setActiveLink() {
+    let current = '';
+    const scrollPos = window.scrollY + 100;
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if(scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+    navItems.forEach(link => {
+      link.style.opacity = '0.8';
+      const href = link.getAttribute('href').substring(1);
+      if(href === current) {
+        link.style.opacity = '1';
+        link.style.fontWeight = '600';
+      } else {
+        link.style.fontWeight = '500';
+      }
+    });
+  }
+  
+  window.addEventListener('scroll', setActiveLink);
+  window.addEventListener('load', setActiveLink);
+  
+  // Optional: add a small refresh for map iframe on mobile - no issues
+  console.log("Dokan Sowar - Modern Photography Studio Ready");
+</script>
 </body>
 </html>
